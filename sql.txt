@@ -1,0 +1,93 @@
+-- phpMyAdmin SQL Dump
+-- version 4.7.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: Jul 21, 2018 at 04:58 AM
+-- Server version: 5.6.35
+-- PHP Version: 7.0.20
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `media_rep_db`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `folders`
+--
+
+CREATE TABLE `folders` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `parentid` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `folders`
+--
+
+INSERT INTO `folders` (`id`, `name`, `userid`, `parentid`, `date`) VALUES
+(3, '18_test_2018-07-21 044756', 18, 0, '2018-07-21 02:47:56'),
+(4, '19_user_2018-07-21 045116', 19, 0, '2018-07-21 02:51:16');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` varchar(15) NOT NULL,
+  `user_type` varchar(15) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `mobile`, `user_type`, `password`) VALUES
+(1, 'admin', 'ahmedrash@gmail.com', '01738721252', 'super', '21232f297a57a5a743894a0e4a801fc3'),
+(18, 'test', 'test@test.com', '', 'user', '098f6bcd4621d373cade4e832627b4f6'),
+(19, 'user', 'user@user.com', '', 'user', 'ee11cbb19052e40b07aac0ca060c23ee');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `folders`
+--
+ALTER TABLE `folders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uc_user` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `folders`
+--
+ALTER TABLE `folders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;

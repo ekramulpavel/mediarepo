@@ -1,0 +1,160 @@
+-- phpMyAdmin SQL Dump
+-- version 4.8.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Jul 31, 2018 at 02:38 AM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `mediarepo`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `files`
+--
+
+CREATE TABLE `files` (
+  `id` int(255) NOT NULL,
+  `file_name` varchar(255) NOT NULL,
+  `user_id` int(255) NOT NULL,
+  `folder_id` int(255) NOT NULL,
+  `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `modified_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `file_path` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `files`
+--
+
+INSERT INTO `files` (`id`, `file_name`, `user_id`, `folder_id`, `create_date`, `modified_date`, `file_path`) VALUES
+(5, 'Exction _ Horiz_ Drill_7.jpg', 1, 9, '2018-07-31 00:27:08', '2018-07-31 00:27:08', 'E:\\xampp\\htdocs\\mediarepo\\application\\../uploads/awards/awards 2018/images/Exction _ Horiz_ Drill_7.jpg'),
+(6, 'Exction _ Horiz_ Drill_8.jpg', 1, 9, '2018-07-31 00:27:09', '2018-07-31 00:27:09', 'E:\\xampp\\htdocs\\mediarepo\\application\\../uploads/awards/awards 2018/images/Exction _ Horiz_ Drill_8.jpg'),
+(7, 'Exction _ Horiz_ Drill_9 (1).jpg', 1, 9, '2018-07-31 00:27:09', '2018-07-31 00:27:09', 'E:\\xampp\\htdocs\\mediarepo\\application\\../uploads/awards/awards 2018/images/Exction _ Horiz_ Drill_9 (1).jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `folders`
+--
+
+CREATE TABLE `folders` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `parentid` int(11) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `upload_flag` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `folders`
+--
+
+INSERT INTO `folders` (`id`, `name`, `userid`, `parentid`, `date`, `upload_flag`) VALUES
+(1, 'uploads', 1, 0, '2018-07-26 20:48:54', 0),
+(2, 'awards', 1, 1, '2018-07-28 00:42:02', 0),
+(3, 'annual meeting', 1, 1, '2018-07-28 00:42:06', 0),
+(4, 'awards 2018', 1, 2, '2018-07-28 00:42:17', 0),
+(5, 'awards 2017', 1, 2, '2018-07-28 00:42:25', 0),
+(6, 'awards 2016', 1, 2, '2018-07-28 00:42:30', 0),
+(7, 'annual meeting 2018', 1, 3, '2018-07-28 00:42:45', 0),
+(8, 'videos', 1, 4, '2018-07-28 00:42:55', 1),
+(9, 'images', 1, 4, '2018-07-28 00:43:02', 1),
+(10, 'audios', 1, 4, '2018-07-28 00:43:07', 1),
+(11, 'videos', 1, 5, '2018-07-28 00:43:16', 1),
+(12, 'audios', 1, 5, '2018-07-28 00:43:23', 1),
+(13, 'images', 1, 5, '2018-07-28 00:43:29', 1),
+(14, 'videos', 1, 6, '2018-07-28 00:43:39', 1),
+(15, 'audios', 1, 6, '2018-07-28 00:43:45', 1),
+(16, 'images', 1, 6, '2018-07-28 00:43:50', 1),
+(17, 'awards 2015', 1, 2, '2018-07-30 18:03:05', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `mobile` varchar(15) NOT NULL,
+  `user_type` varchar(15) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id`, `name`, `email`, `mobile`, `user_type`, `password`) VALUES
+(1, 'admin', 'admin@mail.com', '', 'super', '21232f297a57a5a743894a0e4a801fc3'),
+(2, 'user', 'user@gmail.com', '', 'user', 'ee11cbb19052e40b07aac0ca060c23ee'),
+(3, 'test', 'test@mail.com', '', 'user', '098f6bcd4621d373cade4e832627b4f6');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `files`
+--
+ALTER TABLE `files`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `folders`
+--
+ALTER TABLE `folders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `uc_user` (`email`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `files`
+--
+ALTER TABLE `files`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `folders`
+--
+ALTER TABLE `folders`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

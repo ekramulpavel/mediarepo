@@ -1,0 +1,20 @@
+
+
+ RewriteBase /mediarepo/
+
+ RewriteEngine On
+ RewriteCond %{REQUEST_URI} ^/system.*
+ RewriteRule ^(.*) index.php?/$1 [L]
+ RewriteCond %{REQUEST_FILENAME} !-f
+ RewriteCond %{REQUEST_FILENAME} !-d
+ RewriteRule ^(.+) index.php?/$1 [L]
+RewriteRule faq user/pages/?mid=30&sid=0&tid=0
+
+SetEnvIf Host www.yoursite.tld$ CI_ENV=production
+#SetEnvIf Host test.yoursite.tld$ CI_ENV=testing
+SetEnvIf Host localhost$ CI_ENV=development
+
+RewriteCond $1 !^(index\\.php|resources|robots\\.txt)
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?/$1 [L,QSA]

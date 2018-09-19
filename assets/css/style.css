@@ -1,0 +1,381 @@
+@charset "UTF-8";
+/*
+ * jQuery File Upload Plugin CSS Example
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * https://opensource.org/licenses/MIT
+ */
+body{
+  font-size:14px;
+}
+ .nav-pills .nav-link {
+   color: #000000;
+ }
+ .nav-pills .nav-link:not(.active):hover {
+   color: #007bff;
+ }
+ a:hover {text-decoration: none;}
+ .actionButton{
+   outline:none;
+   box-shadow: 0 0 0 0.2rem rgba(0,123,255,.0), inset 0 3px 5px rgba(0,0,0,.0);
+   height:34px;
+   width:29px;
+   line-height:34px;
+   text-align:center;
+ }
+ .dropdown a{
+   float:right;
+ }
+
+ .dropdown-menu.show{
+   min-width:auto !important;
+ }
+
+ .dropdown-menu.show a{
+   float:left;
+   width:100%;
+ }
+ .nav>li>a {
+   padding: 10px 0px;
+ }
+ .brand-image {
+   margin-left: -1rem;
+   margin-right: 9px;
+ }
+
+
+ .user-panel .info {
+   padding: 16px 5px 5px 10px;
+ }
+
+ .sidebar-mini.sidebar-collapse .main-header{
+   margin-left:0px !important;
+ }
+
+ .navbar-badge {
+   top:0px;
+   right:0px;
+ }
+
+ .thumbnail
+ {
+     border-radius: 0 !important;
+ }
+
+ .content-section {
+     margin-bottom: 30px;
+ }
+
+ .navbar {
+     margin-bottom: 0;
+ }
+ .dataTables_tools button{
+   float:right;
+ }
+
+ .dataTables_tools .btn:first-child{
+   border-radius: 0 .25rem .25rem 0;
+ }
+
+ .dataTables_tools .btn:last-child{
+   border-radius: .25rem 0 0 .25rem;
+ }
+
+ .table-container label{
+   width:100%;
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   line-height: 30px;
+ }
+
+ .table-container label .form-control.form-control-sm{
+   margin-left:10px;
+   margin-right:10px;
+ }
+
+ .pagination{
+   float:right;
+ }
+
+ .table > thead > tr > th{
+   border-top: 0px solid #f6f6f6 !important;
+   border-bottom: 2px solid #f6f6f6;
+ }
+
+ .table > thead > tr > th:first-child{
+   width:50px !important;
+ }
+
+ .table > tbody > tr > td, .table > tbody > tr > th, .table > tfoot > tr > td, .table > tfoot > tr > th, .table > thead > tr > td, .table > thead > tr > th{
+   border-top: 1px solid #f6f6f6;
+   vertical-align: middle;
+ }
+
+ .table td img{
+   height:40px;
+   width:auto;
+ }
+
+ .table.grid-view td img{
+   height:64px;
+   width:auto;
+ }
+
+ .table.grid-view tr{
+   width:20%;
+   float:left;
+ }
+
+ .table.grid-view tr td{
+   width:100%;
+   float:left;
+ }
+
+ .table.grid-view > thead > tr > th{
+   visibility: hidden;
+ }
+
+ .table.grid-view .btn > span {
+     display: none;
+ }
+
+ .table h4 {
+     margin: 0;
+     font-size:14px !important;
+ }
+
+ .thumbnail.icon {
+     border: none;
+     margin: 0;
+     background: transparent;
+     color: #fff;
+     text-align: center;
+     overflow: hidden;
+     position: relative;
+     font-size: 30px;
+     min-width: 40px;
+ }
+
+ .thumbnail.icon:before {
+     display: block;
+     content: "";
+     width: 100%;
+     padding-top: 0%;
+ }
+
+ .thumbnail.icon > .square-element {
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+ }
+
+ .thumbnail.icon > .square-element:before {
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+     -ms-transform: translate(-50%, -50%);
+     -o-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+ }
+
+ #table-users tr{
+   cursor: pointer;
+ }
+
+ .grid-view tr{
+   cursor: pointer;
+ }
+
+ .grid-view td{
+   border:0px !important;
+   text-align: center;
+
+ }
+
+ .grid-view h4{
+   font-size:14px !important;
+ }
+
+ .grid-view td.fade-edge.remove-padding-top{
+   display:none !important;
+ }
+
+ .grid-view tr td.text-center.content-fill.text-left-on-grid-view.no-wrap{
+   display:none !important;
+ }
+
+ .grid-view tr:hover td.text-center.content-fill.text-left-on-grid-view.no-wrap{
+   opacity: 1;
+ }
+
+ .action_btns{
+   display:none;
+ }
+ .grid-view tr:hover .action_btns{
+   display:block;
+   position:absolute;
+   top:0px;
+   right:0px;
+ }
+
+ .grid-view .icon-only{
+   padding-bottom: 0px;
+ }
+
+ .grid-view .fade-edge{
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+ }
+
+ .dataTables_wrapper .row:last-child .col-sm-2{
+   justify-content: center;
+   display: flex;
+ }
+
+ .dataTables_wrapper .dataTables_length{
+   align-self:center;
+ }
+
+ .dataTables_wrapper .dataTables_length label{
+   margin-bottom:0px;
+ }
+
+ .dataTables_wrapper .row:last-child .col-sm-4{
+   justify-content: left;
+   display: flex;
+ }
+
+ .dataTables_wrapper .dataTables_info{
+   align-self:center;
+ }
+
+ .dataTables_wrapper .dataTables_paginate .pagination{
+   margin-bottom: 0px !important;
+ }
+
+ .btn.focus, .btn:focus {
+   outline: 0;
+   box-shadow: 0 0 0 .2rem rgba(0,123,255,0) !important;
+ }
+
+ .dropdown a{
+   float:right;
+ }
+
+ .control-sidebar .dropdown-item{
+   padding:0px;
+ }
+
+
+ .fade.in {
+     opacity: 1 !important;
+ }
+
+/* Admin Dashboard Operation Bar Hidden */
+ .col-lg-7{
+   display: none;
+ }
+
+ .main-sidebar{
+   z-index: 1000;
+ }
+
+ .logs .text-muted{
+   font-size:12px;
+   line-height: 21px;
+   display:none;
+ }
+
+ .logs .text-span {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.logs li:hover .text-span{
+  width: 160px;
+}
+
+.logs li:hover .text-muted{
+  display:block;
+}
+
+.upload-files{
+box-shadow: 0 0 5px rgba(0,0,0,.3);
+z-index: 1100;
+background-color: #fff;
+max-width: 1170px;
+width: 100%;
+left:50%;
+transform: translate(-50%,0);
+margin-bottom: 0;
+}
+
+/*.modal-dialog-centered {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    min-height: calc(100% - (.5rem * 2));
+}
+*/
+
+.user-panel img{
+
+    height: 144px;
+    width: 136px;
+    border-radius: 50%;
+    position: relative;
+    margin-left: 26px;
+    margin-top: 12px;
+}
+
+
+.alert-container{
+position: absolute;
+right: 0px;
+top:10px;
+z-index: 1100;
+}
+
+
+.ssk.ssk-text {
+    margin-right: 0px;
+    text-align: left;
+    display: block;
+    overflow: hidden;
+    font-size: 15px;
+    line-height: normal;
+    padding-right: 10px;
+    margin-bottom: 5px;
+
+
+    }
+
+
+.file-upload {
+    display: none;
+}
+
+
+.p-image {
+    /* position: absolute; 
+    /* top: 167px; */
+    /* right: 30px; */
+    font-size: 25px;
+    color: #666666;
+    transition: all .3s cubic-bezier(.175, .885, .32, 1.275);
+}
+
+
